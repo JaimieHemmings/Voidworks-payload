@@ -1,7 +1,16 @@
 'use client'
 import React, { useState } from 'react'
 
-import type { Page } from '@/payload-types'
+// Update the import path to the correct relative location, for example:
+import type { Page } from '../../payload-types.ts'
+// Or, if you want to use the alias '@', ensure your tsconfig.json has:
+//
+// "compilerOptions": {
+//   "baseUrl": "./src",
+//   "paths": {
+//     "@/*": ["*"]
+//   }
+// }
 
 import Parallax from './Parallax'
 
