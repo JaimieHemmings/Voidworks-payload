@@ -12,18 +12,20 @@ export const HighImpactHero: React.FC<Page['hero']> = ({ links, media, richText 
   return (
     <div className="relative w-full overflow-hidden">
       <div className="z-10 grid grid-cols-1 md:grid-cols-2 container px-0">
-        <div className="h-full flex flex-col justify-center items-center py-16">
-          <h1 className="text-white text-6xl font-bold mb-6 drop-shadow-lg">
-            VoidWorks
-            <span className="block text-2xl md:text-3xl my-4">
-              Web Development Agency Cornwall - Custom Digital Solutions
-            </span>
-          </h1>
-          <p className="text-white text-base md:text-lg mb-4 opacity-90">
-            We create high-performance websites and web applications for Cornwall businesses using
-            modern technologies. From concept to deployment, we deliver scalable digital solutions
-            that drive real results.
-          </p>
+        <div className="h-full flex flex-col justify-center py-16">
+          <div className="md:max-w-[70%]">
+            <h1 className="text-white text-6xl font-bold mb-6 drop-shadow-lg">
+              VoidWorks
+              <span className="block text-2xl md:text-3xl my-4">
+                Web Development Agency Cornwall - Custom Digital Solutions
+              </span>
+            </h1>
+            <p className="text-white text-base md:text-lg mb-4 opacity-90">
+              We create high-performance websites and web applications for Cornwall businesses using
+              modern technologies. From concept to deployment, we deliver scalable digital solutions
+              that drive real results.
+            </p>
+          </div>
           <div className="w-full flex flex-row md:flex-col mt-6 justify-start">
             <Link
               href="/"
@@ -59,12 +61,13 @@ export const HighImpactHero: React.FC<Page['hero']> = ({ links, media, richText 
           </div>
         </div>
       </div>
-      <div className="hidden md:block absolute top-0 md:w-[calc(50vw)] h-full right-0">
+      <div className="hidden md:block absolute top-0 md:w-[calc(50vw)] h-full left-1/2">
         <div className="h-full flex flex-col justify-center relative overflow-hidden">
           <Media
             resource={media}
             className="w-full h-full flex flex-col justify-center"
-            pictureClassName="relative"
+            pictureClassName="relative w-full h-full"
+            imgClassName="w-full h-full object-cover object-left min-h-[400px]"
           />
         </div>
       </div>

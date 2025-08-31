@@ -21,7 +21,7 @@ const navItems = [
 export const HeaderClient: React.FC<any> = ({ headerData }) => {
   const [isOpen, setOpen] = useState(false)
   return (
-    <header className="w-full bg-black shadow-md sticky top-0 z-[999] w-full left-0">
+    <header className="w-full bg-payload shadow-md sticky top-0 z-[999] w-full left-0">
       <nav className="container mx-auto flex items-center justify-between py-4 px-6">
         <Link href="/" className="flex items-center gap-2 text-xl font-semibold text-white">
           {' '}
@@ -92,7 +92,7 @@ export const HeaderClient: React.FC<any> = ({ headerData }) => {
         </div>
         {/* Mobile Nav Slideout */}
         <div
-          className={`fixed top-0 right-0 h-full w-64 bg-black shadow-lg z-50 transform transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}
+          className={`fixed top-0 right-0 h-full w-64 bg-payload shadow-lg z-50 transform transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}
         >
           <div className="flex flex-col h-full p-6">
             <div className="flex items-center justify-between mb-8">
@@ -160,7 +160,7 @@ export const HeaderClient: React.FC<any> = ({ headerData }) => {
         {/* Overlay for closing mobile nav */}
         {isOpen && (
           <div
-            className="fixed inset-0 bg-black bg-opacity-40 z-40 md:hidden"
+            className="fixed inset-0 bg-payload bg-opacity-40 z-40 md:hidden"
             onClick={() => setOpen(false)}
           />
         )}
