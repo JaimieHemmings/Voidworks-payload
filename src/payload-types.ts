@@ -449,6 +449,7 @@ export interface ContentBlock {
   columns?:
     | {
         size?: ('oneThird' | 'half' | 'twoThirds' | 'full') | null;
+        heading?: string | null;
         richText?: {
           root: {
             type: string;
@@ -1084,6 +1085,7 @@ export interface ContentBlockSelect<T extends boolean = true> {
     | T
     | {
         size?: T;
+        heading?: T;
         richText?: T;
         enableLink?: T;
         link?:

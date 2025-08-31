@@ -34,6 +34,10 @@ const columnFields: Field[] = [
     ],
   },
   {
+    name: 'heading',
+    type: 'text',
+  },
+  {
     name: 'richText',
     type: 'richText',
     editor: lexicalEditor({
