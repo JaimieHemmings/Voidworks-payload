@@ -26,7 +26,8 @@ export const HighImpactHero: React.FC<Page['hero']> = ({ links, media, richText 
       />
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 w-full max-w-2xl px-6">
         <h1 className="text-white text-5xl font-bold text-center mb-6 drop-shadow-lg">
-          VoidWorks | Web Development Agency Cornwall | Custom Digital Solutions
+          VoidWorks{' '}
+          <span className="block">Web Development Agency Cornwall | Custom Digital Solutions</span>
         </h1>
         <p className="text-white text-lg text-center mb-4 opacity-90">
           We create high-performance websites and web applications for Cornwall businesses using
