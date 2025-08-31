@@ -6,9 +6,12 @@ import type { Page } from '@/payload-types'
 
 import Link from 'next/link'
 import { Media } from '@/components/Media'
+import RichText from '@/components/RichText'
+import { generatePageUrl } from '@/utilities/generatePageUrl'
 
 export const HighImpactHero: React.FC<Page['hero']> = ({ links, media, richText }) => {
   const [scrollPercent, setScrollPercent] = useState(0)
+  console.log(links)
   return (
     <div className="relative w-full overflow-hidden">
       <div className="z-10 grid grid-cols-1 md:grid-cols-2 container px-0">
@@ -20,40 +23,38 @@ export const HighImpactHero: React.FC<Page['hero']> = ({ links, media, richText 
                 Web Development Agency Cornwall - Custom Digital Solutions
               </span>
             </h1>
-            <p className="text-white text-base md:text-lg mb-4 opacity-90">
-              We create high-performance websites and web applications for Cornwall businesses using
-              modern technologies. From concept to deployment, we deliver scalable digital solutions
-              that drive real results.
-            </p>
+            {richText && (
+              <RichText
+                data={richText}
+                className="text-white text-base md:text-lg mb-4 opacity-90 px-0"
+              />
+            )}
           </div>
-          <div className="w-full flex flex-row md:flex-col mt-6 justify-start">
-            <Link
-              href="/"
-              className="group flex-1 relative inline-block border-b-[1px] border-t-[1px] border-white/30 px-8 py-5 overflow-hidden bg-transparent hover:bg-white transition-colors duration-300 max-md:border-r-[1px] border-white/30 md:w-1/2"
-            >
-              <span className="relative z-10 flex items-center justify-between gap-2 text-white text-sm text-center transition-all duration-300 group-hover:-translate-y-[200%] group-hover:text-black">
-                <span>Start Your Project</span>
-                <MdArrowOutward className="text-lg" />
-              </span>
-              <span className="absolute inset-0 flex items-center justify-between gap-2 text-sm text-black translate-y-full group-hover:translate-y-0 transition-all duration-300 px-9">
-                <span>Start Your Project</span>
-                <MdArrowOutward className="text-lg" />
-              </span>
-            </Link>
-            <Link
-              href="/"
-              className="group flex-1 relative inline-block border-b-[1px] border-t-[1px] border-white/30 px-8 py-5 overflow-hidden bg-transparent hover:bg-white transition-colors duration-300 md:w-1/2"
-            >
-              <span className="relative z-10 flex items-center justify-between gap-2 text-white text-sm text-center transition-all duration-300 group-hover:-translate-y-[200%] group-hover:text-black">
-                <span>Learn More</span>
-                <MdArrowOutward className="text-lg" />
-              </span>
-              <span className="absolute inset-0 flex items-center justify-between gap-2 text-sm text-black translate-y-full group-hover:translate-y-0 transition-all duration-300 px-9">
-                <span>Learn More</span>
-                <MdArrowOutward className="text-lg" />
-              </span>
-            </Link>
-          </div>
+          {links && links.length > 0 && (
+            <div className="w-full flex flex-row md:flex-col mt-6 justify-start">
+              {links.map((link, index) => (
+                <Link
+                  key={index}
+                  href={generatePageUrl(
+                    link.link?.reference?.relationTo === 'pages' &&
+                      typeof link.link.reference.value !== 'number'
+                      ? (link.link.reference.value as Page)
+                      : undefined,
+                  )}
+                  className="group flex-1 relative inline-block border-b-[1px] border-t-[1px] border-white/30 px-8 py-5 overflow-hidden bg-transparent hover:bg-white transition-colors duration-300 max-md:border-r-[1px] border-white/30 md:w-1/2"
+                >
+                  <span className="relative z-10 flex items-center justify-between gap-2 text-white text-sm text-center transition-all duration-300 group-hover:-translate-y-[200%] group-hover:text-black">
+                    <span>{link.link.label}</span>
+                    <MdArrowOutward className="text-lg" />
+                  </span>
+                  <span className="absolute inset-0 flex items-center justify-between gap-2 text-sm text-black translate-y-full group-hover:translate-y-0 transition-all duration-300 px-9">
+                    <span>{link.link.label}</span>
+                    <MdArrowOutward className="text-lg" />
+                  </span>
+                </Link>
+              ))}
+            </div>
+          )}
         </div>
         <div className="relative md:hidden">
           <div className="h-full flex flex-col justify-center relative overflow-hidden">
