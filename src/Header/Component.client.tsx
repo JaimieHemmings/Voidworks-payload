@@ -1,7 +1,6 @@
 'use client'
 import React, { useState } from 'react'
 import Link from 'next/link'
-import { Logo } from '../components/Logo/Logo'
 import { FaTwitter, FaGithub, FaLinkedin } from 'react-icons/fa'
 import { Squash as Hamburger } from 'hamburger-react'
 
@@ -24,8 +23,9 @@ export const HeaderClient: React.FC<any> = ({ headerData }) => {
   return (
     <header className="w-full bg-white shadow-md sticky top-0 z-[999] w-full left-0">
       <nav className="container mx-auto flex items-center justify-between py-4 px-6">
-        <Link href="/" className="flex items-center gap-2 invert">
-          <Logo />
+        <Link href="/" className="flex items-center gap-2 text-xl font-semibold">
+          {' '}
+          VoidWorks
         </Link>
         {/* Desktop Nav & Social - hidden on md and below */}
         <div className="hidden md:flex items-center gap-8">
@@ -96,7 +96,6 @@ export const HeaderClient: React.FC<any> = ({ headerData }) => {
         >
           <div className="flex flex-col h-full p-6">
             <div className="flex items-center justify-between mb-8">
-              <Logo />
               <Hamburger toggled={isOpen} toggle={setOpen} size={24} color="black" />
             </div>
             <ul className="flex flex-col gap-6">

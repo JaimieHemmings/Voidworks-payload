@@ -94,8 +94,8 @@ const config = {
         warning: 'hsl(var(--warning))',
       },
       fontFamily: {
-        mono: ['var(--font-geist-mono)'],
-        sans: ['var(--font-geist-sans)'],
+        mono: ['var(--font-geist-mono)', 'monospace'],
+        sans: ['Untitled Sans', 'var(--font-geist-sans)', 'system-ui', 'sans-serif'],
       },
       keyframes: {
         'accordion-down': {
