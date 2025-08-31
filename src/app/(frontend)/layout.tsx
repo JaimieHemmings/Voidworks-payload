@@ -35,9 +35,9 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             }}
           />
           <BgVideo />
-          <div className="z-2 relative">
-            <Header />
-            {children}
+          <Header />
+          <div className="z-2 relative max-md:px-4">{children}</div>
+          <div className="relative z-2">
             <Footer />
           </div>
         </Providers>

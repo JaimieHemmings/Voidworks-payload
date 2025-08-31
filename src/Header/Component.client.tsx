@@ -21,9 +21,9 @@ const navItems = [
 export const HeaderClient: React.FC<any> = ({ headerData }) => {
   const [isOpen, setOpen] = useState(false)
   return (
-    <header className="w-full bg-white shadow-md sticky top-0 z-[999] w-full left-0">
+    <header className="w-full bg-black shadow-md sticky top-0 z-[999] w-full left-0">
       <nav className="container mx-auto flex items-center justify-between py-4 px-6">
-        <Link href="/" className="flex items-center gap-2 text-xl font-semibold">
+        <Link href="/" className="flex items-center gap-2 text-xl font-semibold text-white">
           {' '}
           VoidWorks
         </Link>
@@ -35,7 +35,7 @@ export const HeaderClient: React.FC<any> = ({ headerData }) => {
                 key={item.label}
                 className={item.dropdown ? 'relative group inline-block' : 'relative inline-block'}
               >
-                <Link href={item.href} className="px-3 py-2 hover:bg-gray-100 rounded text-black">
+                <Link href={item.href} className="px-3 py-2 hover:bg-gray-100 rounded text-white">
                   {item.label}
                 </Link>
                 {item.dropdown && (
@@ -44,7 +44,7 @@ export const HeaderClient: React.FC<any> = ({ headerData }) => {
                       <li key={drop.label}>
                         <Link
                           href={drop.href}
-                          className="block px-4 py-2 hover:bg-gray-100 text-black"
+                          className="block px-4 py-2 hover:bg-gray-100 text-white"
                         >
                           {drop.label}
                         </Link>
@@ -64,7 +64,7 @@ export const HeaderClient: React.FC<any> = ({ headerData }) => {
               aria-label="Twitter"
               className="hover:text-blue-500"
             >
-              <FaTwitter size={24} className="text-black" />
+              <FaTwitter size={24} className="text-white" />
             </a>
             <a
               href="https://github.com"
@@ -73,7 +73,7 @@ export const HeaderClient: React.FC<any> = ({ headerData }) => {
               aria-label="GitHub"
               className="hover:text-gray-700"
             >
-              <FaGithub size={24} className="text-black" />
+              <FaGithub size={24} className="text-white" />
             </a>
             <a
               href="https://linkedin.com"
@@ -82,28 +82,28 @@ export const HeaderClient: React.FC<any> = ({ headerData }) => {
               aria-label="LinkedIn"
               className="hover:text-blue-700"
             >
-              <FaLinkedin size={24} className="text-black" />
+              <FaLinkedin size={24} className="text-white" />
             </a>
           </div>
         </div>
         {/* Hamburger - visible on md and below */}
         <div className="md:hidden flex items-center">
-          <Hamburger toggled={isOpen} toggle={setOpen} size={24} color="black" />
+          <Hamburger toggled={isOpen} toggle={setOpen} size={24} color="white" />
         </div>
         {/* Mobile Nav Slideout */}
         <div
-          className={`fixed top-0 right-0 h-full w-64 bg-white shadow-lg z-50 transform transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}
+          className={`fixed top-0 right-0 h-full w-64 bg-black shadow-lg z-50 transform transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}
         >
           <div className="flex flex-col h-full p-6">
             <div className="flex items-center justify-between mb-8">
-              <Hamburger toggled={isOpen} toggle={setOpen} size={24} color="black" />
+              <Hamburger toggled={isOpen} toggle={setOpen} size={24} color="white" />
             </div>
             <ul className="flex flex-col gap-6">
               {navItems.map((item) => (
                 <li key={item.label} className="relative">
                   <Link
                     href={item.href}
-                    className="px-3 py-2 rounded text-black text-lg"
+                    className="px-3 py-2 rounded text-white text-lg"
                     onClick={() => setOpen(false)}
                   >
                     {item.label}
@@ -114,7 +114,7 @@ export const HeaderClient: React.FC<any> = ({ headerData }) => {
                         <li key={drop.label}>
                           <Link
                             href={drop.href}
-                            className="block px-3 py-2 rounded text-black text-base"
+                            className="block px-3 py-2 rounded text-white text-base"
                             onClick={() => setOpen(false)}
                           >
                             {drop.label}
@@ -134,7 +134,7 @@ export const HeaderClient: React.FC<any> = ({ headerData }) => {
                 aria-label="Twitter"
                 className="hover:text-blue-500"
               >
-                <FaTwitter size={24} className="text-black" />
+                <FaTwitter size={24} className="text-white" />
               </a>
               <a
                 href="https://github.com"
@@ -143,7 +143,7 @@ export const HeaderClient: React.FC<any> = ({ headerData }) => {
                 aria-label="GitHub"
                 className="hover:text-gray-700"
               >
-                <FaGithub size={24} className="text-black" />
+                <FaGithub size={24} className="text-white" />
               </a>
               <a
                 href="https://linkedin.com"
@@ -152,7 +152,7 @@ export const HeaderClient: React.FC<any> = ({ headerData }) => {
                 aria-label="LinkedIn"
                 className="hover:text-blue-700"
               >
-                <FaLinkedin size={24} className="text-black" />
+                <FaLinkedin size={24} className="text-white" />
               </a>
             </div>
           </div>

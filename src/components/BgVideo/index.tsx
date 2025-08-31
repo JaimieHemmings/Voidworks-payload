@@ -20,16 +20,16 @@ const BgVideo = () => {
       ></div>
       {/* Vertical white lines */}
       <div className="fixed top-0 left-0 inset-0">
-        <div className="container relative h-full">
+        <div className="container relative h-full w-[calc(100vw-2rem)]">
           <div className="absolute inset-0">
             {/* Left edge */}
             <div className="absolute left-0 top-0 w-px h-full bg-white/30"></div>
             {/* Quarter line (25%) */}
-            <div className="absolute left-1/4 top-0 w-px h-full bg-white/30"></div>
+            <div className="max-md:hidden absolute left-1/4 top-0 w-px h-full bg-white/30"></div>
             {/* Center line (50%) */}
-            <div className="absolute left-1/2 top-0 w-px h-full bg-white/30"></div>
+            <div className="max-md:hidden absolute left-1/2 top-0 w-px h-full bg-white/30"></div>
             {/* Three-quarter line (75%) */}
-            <div className="absolute left-3/4 top-0 w-px h-full bg-white/30"></div>
+            <div className="max-md:hidden absolute left-3/4 top-0 w-px h-full bg-white/30"></div>
             {/* Right edge */}
             <div className="absolute right-0 top-0 w-px h-full bg-white/30"></div>
           </div>
