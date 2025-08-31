@@ -293,7 +293,7 @@ export const Parallax: React.FC<ParallaxProps> = ({
   return (
     <div
       ref={containerRef}
-      className={className}
+      className={`${className} z-10`}
       style={{
         position: 'absolute',
         top: 0,

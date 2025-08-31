@@ -2,22 +2,14 @@
 import React, { useState } from 'react'
 
 // Update the import path to the correct relative location, for example:
-import type { Page } from '../../payload-types.ts'
-// Or, if you want to use the alias '@', ensure your tsconfig.json has:
-//
-// "compilerOptions": {
-//   "baseUrl": "./src",
-//   "paths": {
-//     "@/*": ["*"]
-//   }
-// }
+import type { Page } from '@/payload-types'
 
 import Parallax from './Parallax'
 
 export const HighImpactHero: React.FC<Page['hero']> = ({ links, media, richText }) => {
   const [scrollPercent, setScrollPercent] = useState(0)
   return (
-    <div className="h-[70vh] overflow-hidden bg-black relative">
+    <div className="h-[70vh] overflow-hidden bg-black relative z-10">
       <Parallax
         className="parallax-bg"
         waveSize={300}

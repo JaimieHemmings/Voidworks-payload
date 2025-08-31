@@ -22,7 +22,7 @@ const navItems = [
 export const HeaderClient: React.FC<any> = ({ headerData }) => {
   const [isOpen, setOpen] = useState(false)
   return (
-    <header className="w-full bg-white shadow-md">
+    <header className="w-full bg-white shadow-md sticky top-0 z-[999] w-full left-0">
       <nav className="container mx-auto flex items-center justify-between py-4 px-6">
         <Link href="/" className="flex items-center gap-2 invert">
           <Logo />
